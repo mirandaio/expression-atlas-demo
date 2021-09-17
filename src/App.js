@@ -1,20 +1,15 @@
-import { useEffect } from 'react';
-// import ExpressionAtlasHeatmap from '@ebi-gene-expression-group/expression-atlas-heatmap-highcharts';
+import ExpressionAtlasHeatmap from '@ebi-gene-expression-group/expression-atlas-heatmap-highcharts';
 import { render as expressionAtlasHeatmapRender } from '@ebi-gene-expression-group/expression-atlas-heatmap-highcharts'
 
 
 function App() {
-
-  useEffect(() => {
-    expressionAtlasHeatmapRender({
-      query: {gene: 'ESR1'},
-      target: 'container'
-    });
-  }, []);
-
   return (
     <div>
-      <div id="container"/>
+      <div id="heatmapContainer"/>
+      <ExpressionAtlasHeatmap
+        target="heatmapContainer"
+        query={{species: 'homo sapiens', gene: 'ENSG00000091831'}}
+      />
     </div>
   );
 }
