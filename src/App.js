@@ -7,6 +7,7 @@ function App() {
       <ExpressionAtlasHeatmap
         target="heatmapContainer"
         query={{ species: "homo sapiens", gene: "ENSG00000091831" }}
+        showAnatomogram={false}
       />
     </div>
   );
